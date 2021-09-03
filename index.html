@@ -32,35 +32,35 @@
         />
 
         <div>
-          <ul class="header__links-container">
+          <ul class="title__links-container">
             <li>
-              <div class="header__link">
+              <div class="title__link">
                 <img
                   src="img/enrollement.svg"
                   alt="enrollment link"
-                  class="header__links-img"
+                  class="title__links-img"
                 />
                 <a href="#">Enrollment</a>
               </div>
             </li>
 
             <li>
-              <div class="header__link">
+              <div class="title__link">
                 <img
                   src="img/parents.svg"
                   alt="parents link"
-                  class="header__links-img"
+                  class="title__links-img"
                 />
                 <a href="#">Parents</a>
               </div>
             </li>
 
             <li>
-              <div class="header__link">
+              <div class="title__link">
                 <img
                   src="img/bus_routes.svg"
                   alt="bus routes link"
-                  class="header__links-img"
+                  class="title__links-img"
                 />
                 <a href="#">Bus Routes</a>
               </div>
@@ -112,15 +112,22 @@
               <li><a href="#">About the Board</a></li>
             </ul>
           </li>
-          <li><a href="#">Athletics</a></li>
+
+          <li class="drop__down">
+            <a href="#">Athletics</a>
+            <ul class="drop__down-content">
+              <li><a href="#">Soccer</a></li>
+              <li><a href="#">Basket Ball</a></li>
+              <li><a href="#">Football</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main class="main__container">
-      <section class="news">
-        <h2 class="news__title">Latest News</h2>
-
+      <section id="news">
+        <h2>Latest News</h2>
         <div class="news__content">
           <img
             src="img/news_2.svg"
@@ -152,27 +159,68 @@
         </div>
 
         <div>
-          <button class="news__btn">More</button>
-          <button class="news__btn">RSS</button>
+          <button class="small__btn">More</button>
+          <button class="small__btn">RSS</button>
         </div>
       </section>
 
-      <aside class="aside">
+      <aside id="aside">
         <div class="aside__shortcuts">
-          <h2 class="aside__shortcuts-title">Side Shortcuts</h2>
-          <button class="aside__shortcuts-btn">
+          <h2>Side Shortcuts</h2>
+          <button class="shortcuts-btn">
             <span>&#43;</span> Get Fit Challenge
           </button>
-          <button class="aside__shortcuts-btn">
-            See Something, Say Something
-          </button>
-          <button class="aside__shortcuts-btn">Careers at Our District</button>
+          <button class="shortcuts-btn">See Something, Say Something</button>
+          <button class="shortcuts-btn">Careers at Our District</button>
         </div>
 
-        <div>
-          <h2 class="aside__announcements-title">Announcements</h2>
+        <div class="aside__announcements">
+          <h2>Announcements</h2>
+          <p>
+            Students who are interested in participating in the school spelling
+            bee should talk to their homeroom teacher. Study guides for the
+            appropriate grade level will be provided and sign ups for practice
+            groups are currently open. Click
+            <span><a href="#">here</a></span> to learn more.
+          </p>
+        </div>
+
+        <div class="aside__learnmore">
+          <p>
+            Each month we will feature a faculty member in our Teacher
+            Spotlight. <span><a href="#">Learn more</a></span> about our
+            wonderful staff members.
+          </p>
+          <div>
+            <button class="small__btn">More</button>
+            <button class="small__btn">RSS</button>
+          </div>
         </div>
       </aside>
+
+      <section id="site-shortcuts">
+        <h2>Site Shortcuts</h2>
+        <button class="shortcuts-btn">
+          <span>&#43;</span> Get Fit Challenge
+        </button>
+        <button class="shortcuts-btn">See Something, Say Something</button>
+        <button class="shortcuts-btn">Careers at Our District</button>
+        <button class="shortcuts-btn">Maps & Directions</button>
+      </section>
+
+      <section id="features" class="features">
+        <h2 class="features__title">Headlines & Features</h2>
+        <img
+          src="img/headlines.svg"
+          alt="headlines Image"
+          class="features-img"
+        />
+        <a href="#">Personalized Learning</a>
+        <p>
+          This is the teaser text that describes the headline story in more
+          detail and prompts the user to click the headline title.
+        </p>
+      </section>
     </main>
   </body>
 </html>

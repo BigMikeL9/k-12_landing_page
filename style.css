@@ -16,7 +16,7 @@ body {
   line-height: 1.9;
   background-color: #fff;
   padding: 0 9.375rem;
-  font-size: 16px;
+  font-size: 1rem;
   height: 100vh;
 
   /* fade in/out animation as the page loads*/
@@ -25,12 +25,22 @@ body {
   transition: all 1s;
 }
 
+h2 {
+  padding-bottom: 1.625rem;
+  font-weight: normal;
+}
+
+p {
+  /* font-weight: 600; */
+}
+
 li,
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/*** Title bar ***/
 .title__container {
   display: flex;
   justify-content: space-between;
@@ -43,33 +53,35 @@ a {
   height: auto;
 }
 
-.header__links-container {
+.title__links-container {
   list-style: none;
 }
 
-.header__links-container li {
+.title__links-container li {
   display: inline-block;
   padding: 0 20px;
 }
 
-.header__link {
+.title__link {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header__links-img {
+.title__links-img {
   width: 35px;
+  cursor: pointer;
 }
 
-.header__links-container li a {
+.title__links-container li a {
   transition: all 0.3s;
 }
 
-.header__links-container li a:hover {
+.title__links-container li a:hover {
   color: #ff4d5a;
 }
 
+/*** Nav Bar ***/
 .nav {
   /* height: 60px; */
   display: flex;
@@ -117,11 +129,7 @@ a {
 
 .drop__down-content li {
   display: block;
-  padding: 4px 20px;
-}
-
-.drop__down-content a {
-  text-decoration: none;
+  padding: 0.25rem 1.25rem;
 }
 
 .drop__down-content li a:hover {
@@ -133,25 +141,40 @@ a {
   display: block;
 }
 
-/* Latest News Section */
-
+/*** main section - grid layout ***/
 .main__container {
   padding: 5rem 0;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 4rem 3rem;
+  grid-auto-flow: row dense;
+  grid-template-areas:
+    "news news aside"
+    "announcements features aside";
 }
 
-.news {
-  /* background-color: #272d33; */
+#news {
+  /* background-color: green; */
+  grid-area: news;
 }
 
-.news__title {
-  padding-bottom: 1rem;
-  font-weight: 500;
+#aside {
+  /* background-color: magenta; */
+  grid-area: aside;
+}
+#site-shortcuts {
+  /* background-color: red; */
+  grid-area: announcements;
 }
 
+#features {
+  /* background-color: orange; */
+  grid-area: features;
+}
+
+/*** News Section ***/
 .news__content {
   text-align: left;
   padding-bottom: 4rem;
@@ -161,30 +184,24 @@ a {
   float: left;
   max-width: 40%;
   height: auto;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 .news__content a {
   color: #4775be;
-  font-size: 18px;
-  font-weight: 700;
-  text-decoration: none;
+  font-size: 1.125rem;
+  /* font-weight: 600; */
 }
 
 .news__content a:hover {
   text-decoration: underline;
 }
 
-.news__content p {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.news__btn {
-  font-size: 16px;
+.small__btn {
+  font-size: 1rem;
   text-align: center;
   background: #272d33;
-  padding: 16px 24px;
+  padding: 1rem 1.5rem;
   color: white;
   text-decoration: none;
   margin-right: 0.5rem;
@@ -196,32 +213,23 @@ a {
   cursor: pointer;
 }
 
-.news__btn:hover {
+.small__btn:hover {
   background-color: #4775be;
   transition: all 0.3s;
 }
 
 /* SideBar - Site Shortcuts */
-.aside {
-  /* background-color: #4775be; */
-}
-
 .aside__shortcuts {
   margin-bottom: 5rem;
 }
 
-.aside__shortcuts-title {
-  padding-bottom: 1rem;
-  font-weight: 500;
-}
-
-.aside__shortcuts-btn {
+.shortcuts-btn {
   background-color: #4775be;
   border: none;
   border-radius: 0.15rem;
   color: #fff;
   padding: 1.3rem 2rem;
-  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   text-align: left;
   text-decoration: none;
   display: inline-block;
@@ -231,13 +239,56 @@ a {
   width: 100%;
 }
 
-.aside__shortcuts-btn span {
+.shortcuts-btn span {
   /* font-size: 18px; */
   font-weight: bold;
   padding-right: 0.5rem;
 }
 
-.aside__shortcuts-btn:hover {
+.shortcuts-btn:hover {
   background-color: #272d33;
   transition: all 0.3s;
+}
+
+/* SideBar - Announcements */
+.aside__announcements {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(145, 136, 136, 0.233);
+}
+
+.aside__announcements span a {
+  color: #4775be;
+}
+
+.aside__announcements span a:hover {
+  text-decoration: underline;
+}
+
+/* SideBar - Learn More */
+.aside__learnmore p {
+  padding: 1.5rem 0;
+}
+
+.aside__learnmore span a {
+  color: #4775be;
+}
+
+.aside__learnmore span a:hover {
+  text-decoration: underline;
+}
+
+/* Features Section */
+.features-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.features a {
+  color: #4775be;
+  font-size: 1.125rem;
+  /* font-weight: 700; */
+}
+
+.features a:hover {
+  text-decoration: underline;
 }
