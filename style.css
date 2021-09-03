@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: inherit; */
+  box-sizing: border-box;
+}
+
+/* html {
+  box-sizing: border-box;
+} */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.9;
+  background-color: #fff;
+  padding: 5rem 9.375rem;
+}
+
+main {
+  padding: 5rem 0;
+}
+
+li,
+a {
+  font-size: 1em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.title__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 30%;
+}
+
+.header__links-container {
+  list-style: none;
+}
+
+.header__links-container li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.header__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__links-img {
+  width: 35px;
+}
+
+.header__links-container li a {
+  transition: all 0.3s ease 0s;
+}
+
+.header__links-container li a:hover {
+  color: #ff4d5a;
+}
+
+.nav {
+  /* height: 60px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.875rem;
+  padding: 0 2.2rem;
+  height: 3.75rem;
+  background-color: #272d33;
+  box-shadow: 0 0.6rem 1.5rem rgba(150, 142, 142, 0.7);
+}
+
+.nav__links {
+  list-style: none;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 14.8px 30px;
+  color: #fff;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.nav__links li:hover {
+  background-color: #4775be;
+}
+
+.drop__down {
+  position: relative;
+  display: inline-block;
+}
+
+.drop__down-content {
+  display: none;
+  position: absolute;
+  margin-top: 15px;
+  padding: 20px 0;
+  left: 0;
+  width: 20rem;
+  background-color: #4775be;
+  box-shadow: 0 0.6rem 1.5rem rgba(78, 75, 75, 0.7);
+  z-index: 10;
+}
+
+.drop__down-content li {
+  display: block;
+  padding: 4px 20px;
+}
+
+.drop__down-content a {
+  text-decoration: none;
+}
+
+.drop__down-content li a:hover {
+  text-decoration: underline;
+  display: block;
+}
+
+.drop__down:hover .drop__down-content {
+  display: block;
+}
+
+/* Latest News Section */
+
+.news {
+  background-color: #272d33;
+  float: left;
+  width: 65%;
+}
+
+.aside__site-shortcuts {
+  background-color: #4775be;
+  float: right;
+  width: 30%;
+}
