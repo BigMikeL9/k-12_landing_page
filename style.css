@@ -15,12 +15,14 @@ body {
   color: #444;
   line-height: 1.9;
   background-color: #fff;
-  padding: 5rem 9.375rem;
+  padding: 0 9.375rem;
   font-size: 16px;
-}
+  height: 100vh;
 
-main {
-  padding: 5rem 0;
+  /* fade in/out animation as the page loads*/
+  /* REMEMBER--> change to 0 then to 100 in javascript */
+  opacity: 100;
+  transition: all 1s;
 }
 
 li,
@@ -33,10 +35,12 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .logo {
-  width: 30%;
+  max-width: 30%;
+  height: auto;
 }
 
 .header__links-container {
@@ -59,7 +63,7 @@ a {
 }
 
 .header__links-container li a {
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s;
 }
 
 .header__links-container li a:hover {
@@ -131,13 +135,19 @@ a {
 
 /* Latest News Section */
 
-.news {
-  /* background-color: #272d33; */
-  float: left;
-  width: 65%;
+.main__container {
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  grid-auto-flow: row;
 }
 
-.news__header {
+.news {
+  /* background-color: #272d33; */
+}
+
+.news__title {
   padding-bottom: 1rem;
   font-weight: 500;
 }
@@ -149,7 +159,8 @@ a {
 
 .news__content img {
   float: left;
-  width: 35%;
+  max-width: 40%;
+  height: auto;
   padding-right: 2rem;
 }
 
@@ -191,8 +202,42 @@ a {
 }
 
 /* SideBar - Site Shortcuts */
-.aside__site-shortcuts {
+.aside {
+  /* background-color: #4775be; */
+}
+
+.aside__shortcuts {
+  margin-bottom: 5rem;
+}
+
+.aside__shortcuts-title {
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+
+.aside__shortcuts-btn {
   background-color: #4775be;
-  float: right;
-  width: 30%;
+  border: none;
+  border-radius: 0.15rem;
+  color: #fff;
+  padding: 1.3rem 2rem;
+  margin-top: 0.75rem;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+.aside__shortcuts-btn span {
+  /* font-size: 18px; */
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+
+.aside__shortcuts-btn:hover {
+  background-color: #272d33;
+  transition: all 0.3s;
 }
