@@ -216,12 +216,13 @@ h6 {
 
 /*** News Section ***/
 .news__content {
+  display: flex;
+  justify-content: space-between;
   text-align: left;
   padding-bottom: 4rem;
 }
 
 .news__content img {
-  float: left;
   max-width: 40%;
   height: auto;
   padding-right: 1rem;
@@ -333,38 +334,31 @@ h6 {
 
 /* MEDIA QUERIES */
 
-/* Tablets */
-@media all and (max-width: 1024px) {
+/****** Tablets ******/
+@media all and (max-width: 768px) {
   body {
     padding: 0 1.875rem;
-    font-size: 1.15rem;
+    font-size: 0.85rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   /*** header section - grid layout ***/
   #header {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 0.6fr 0.6fr;
     grid-template-areas:
       "logo "
       "nav"
       "title__links";
     text-align: center;
     justify-items: center;
+    /* align-items: start; */
   }
 
   /*** Title bar ***/
-  .title__links-container li {
-    padding: 0 1.75rem;
-  }
-
-  .title__links-img {
-    width: 3.5rem;
-  }
-
   .logo__container {
     justify-content: center;
     text-align: left;
@@ -380,7 +374,15 @@ h6 {
   }
 
   .logo {
-    max-width: 12%;
+    max-width: 20%;
+  }
+
+  .title__links-container li {
+    padding: 0 1.75rem;
+  }
+
+  .title__links-img {
+    width: 2.5rem;
   }
 
   /*** Nav Bar ***/
@@ -391,6 +393,10 @@ h6 {
 
   .nav__links {
     display: none;
+  }
+
+  .nav__links li {
+    padding: 0.75rem 1.875rem;
   }
 
   .nav__links li a:hover {
@@ -421,6 +427,7 @@ h6 {
 
   /*** main section - grid layout ***/
   #main__container {
+    padding: 3rem 0;
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 1fr;
     gap: 4rem 0;
@@ -433,7 +440,7 @@ h6 {
 
   /*** News Section ***/
   .news__content {
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
   }
 
   .news__content img {
@@ -442,7 +449,7 @@ h6 {
   }
 
   .news__content a {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   /*** Features Section ***/
@@ -452,7 +459,7 @@ h6 {
   }
 
   .features a {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   /*** SideBar ***/
@@ -461,126 +468,198 @@ h6 {
   }
 }
 
-/* Mobile */
-@media all and (max-width: 580px) {
+/****** Mobile ******/
+@media all and (max-width: 480px) {
   body {
-    padding: 0 1.875rem;
-    font-size: 1.15rem;
+    /* padding: 0 1.875rem; */
+    font-size: 0.8rem;
   }
 
   h2 {
-    font-size: 2rem;
+    padding-bottom: 1.2rem;
+    font-size: 1.2rem;
   }
 
   /*** header section - grid layout ***/
   #header {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-      "logo "
-      "nav"
-      "title__links";
-    text-align: center;
-    justify-items: center;
+    grid-template-rows: 0.6fr 0.6fr 0.6fr;
   }
 
   /*** Title bar ***/
-  .title__links-container li {
-    padding: 0 1.75rem;
-  }
-
-  .title__links-img {
-    width: 3.5rem;
-  }
-
-  /* .logo__container {
-    justify-content: center;
-    text-align: left;
+  .logo__container {
+    flex-direction: column;
+    text-align: center;
     width: 100%;
   }
 
   .logo__container h3 {
-    margin-bottom: 0.2rem;
-  } */
+    font-size: 1.3rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .logo__container h6 {
+    font-size: 0.8rem;
+  }
 
   .logo {
-    max-width: 10%;
+    max-width: 25%;
+    margin: 0 0 1.5rem;
   }
 
-  /*** Nav Bar ***/
-  .nav {
-    margin: 1.5rem 0;
-    justify-content: center;
+  .title__links-container li {
+    padding: 0 1rem;
   }
 
-  .nav__links {
-    display: none;
-  }
-
-  .nav__links li a:hover {
-    text-decoration: underline;
-  }
-
-  .drop__down:hover .drop__down-content {
-    display: none;
-  }
-
-  .nav__links ul {
-    position: absolute;
-    flex-direction: column;
-    background-color: #4775be;
-    width: 80%;
-    left: 10%;
-    box-shadow: 0 0.6rem 1.5rem rgba(150, 142, 142, 0.7);
-  }
-
-  .drop__down-content ul {
-    display: none;
-  }
-
-  .responsive__menu,
-  .active {
-    display: block;
+  .title__links-img {
+    width: 2rem;
   }
 
   /*** main section - grid layout ***/
   #main__container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 1fr;
-    gap: 4rem 0;
-    grid-template-areas:
-      "news"
-      "site-shortcuts"
-      "features"
-      "aside";
+    padding: 3rem 0;
   }
 
   /*** News Section ***/
   .news__content {
-    padding-bottom: 5rem;
+    padding-bottom: 2.5rem;
+    flex-direction: column;
   }
 
   .news__content img {
-    max-width: 35%;
-    padding-right: 1rem;
+    max-width: 60%;
+    padding: 0 0 1rem;
   }
 
   .news__content a {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .small__btn {
+    font-size: 0.75rem;
+    padding: 0.65rem 1.15rem;
+    margin-right: 0.5rem;
+  }
+
+  /*** Shortcuts Section ***/
+  .shortcuts-btn {
+    padding: 1rem 2rem;
+    margin-bottom: 0.75rem;
   }
 
   /*** Features Section ***/
   .features-img {
-    max-width: 50%;
+    max-width: 70%;
     height: auto;
   }
 
   .features a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   /*** SideBar ***/
   .aside__shortcuts {
     display: none;
+  }
+}
+
+/****** Mobile (small) ******/
+@media all and (max-width: 320px) {
+  body {
+    font-size: 0.65rem;
+  }
+
+  /*** Title bar ***/
+  .logo {
+    max-width: 35%;
+    margin: 0 0 1rem;
+  }
+
+  .logo__container h3 {
+    font-size: 1rem;
+  }
+
+  .title__links-img {
+    width: 1.75rem;
+  }
+
+  .title__links-container li {
+    padding: 0 0.75rem;
+  }
+}
+
+/****** Laptop (small) ******/
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 0.7rem;
+    padding: 0 5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  /*** Title bar ***/
+  .logo {
+    max-width: 20%;
+    margin: 0 1rem 0 0;
+  }
+
+  /*** News Section ***/
+  .news__content {
+    padding-bottom: 2rem;
+  }
+
+  .news__content a {
+    font-size: 1rem;
+  }
+
+  .small__btn {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  /*** Features Section ***/
+  .features a {
+    font-size: 1rem;
+  }
+}
+
+/****** large screens ******/
+@media all and (min-width: 1875px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  /*** Title Section ***/
+  .logo__container h3 {
+    font-size: 2.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .logo__container h6 {
+    font-size: 1.5rem;
+  }
+
+  .title__links-img {
+    width: 4rem;
+  }
+
+  /*** News Section ***/
+  .news__content a {
+    font-size: 2rem;
+  }
+
+  .small__btn {
+    font-size: 2rem;
+    padding: 1.5rem 1.75rem;
+  }
+
+  /*** Features Section ***/
+  .features a {
+    font-size: 2rem;
   }
 }
