@@ -6,14 +6,12 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
   color: #444;
   line-height: 1.9;
   background-color: #fff;
   padding: 0 9.375rem;
   font-size: 1rem;
   font-weight: 600;
-  height: 100vh;
 
   /* fade in animation as the page loads*/
   opacity: 0;
@@ -58,9 +56,34 @@ a {
 }
 
 /*** Title bar ***/
+.logo__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.logo__container h3 {
+  margin-bottom: 0.2rem;
+}
+
+.logo__container h6 {
+  display: inline-block;
+}
+
+.logo__container h3,
+h6 {
+  background-color: #facbcc;
+}
+
 .logo {
-  max-width: 50%;
+  max-width: 12%;
+  margin-right: 1.5rem;
   height: auto;
+}
+
+.title__links-container {
+  text-align: right;
 }
 
 .title__links-container li {
@@ -94,64 +117,72 @@ a {
 
 /*** Nav Bar ***/
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 2.2rem;
-  height: 4rem;
+  position: relative;
   background-color: #272d33;
+  color: #fff;
   box-shadow: 0 0.6rem 1.5rem rgba(150, 142, 142, 0.7);
+  border-radius: 0.2rem;
+  width: 100%;
+  /* height: auto; */
 }
 
-.nav__links {
-  list-style: none;
+.nav__links ul {
+  display: flex;
+  align-items: center;
 }
 
 .nav__links li {
-  display: inline-block;
-  padding: 1.05rem 1.875rem;
-  color: #fff;
+  list-style: none;
+  padding: 1.15rem 1.875rem;
   transition: all 0.3s;
-  height: 100%;
+}
+
+.nav__links li:hover {
+  background-color: #4775be;
+  cursor: pointer;
 }
 
 .nav__links li a {
   font-weight: normal;
 }
 
-.nav__links li:hover {
-  background-color: #4775be;
-}
-
 .drop__down {
   position: relative;
-  /* display: inline-block; */
 }
 
 .drop__down-content {
   display: none;
   position: absolute;
-  margin-top: 15px;
-  padding: 1.375rem 0;
   left: 0;
+  margin-top: 1rem;
+  padding: 1.375rem 0;
   width: 20rem;
   background-color: #4775be;
   box-shadow: 0 0.6rem 1.5rem rgba(78, 75, 75, 0.7);
   z-index: 10;
 }
 
-.drop__down-content li {
+.drop__down-content ul {
   display: block;
+}
+
+.drop__down-content li {
   padding: 0.25rem 1.25rem;
 }
 
 .drop__down-content li a:hover {
   text-decoration: underline;
-  display: block;
 }
 
 .drop__down:hover .drop__down-content {
   display: block;
+}
+
+.responsive__menu {
+  display: none;
+  padding: 1.15rem 1.875rem;
+  font-weight: normal;
 }
 
 /*** main section - grid layout ***/
@@ -274,7 +305,7 @@ a {
 
 /* SideBar - Learn More */
 .aside__learnmore p {
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 2rem;
 }
 
 .aside__learnmore span a {
@@ -309,6 +340,10 @@ a {
     font-size: 1.15rem;
   }
 
+  h2 {
+    font-size: 2rem;
+  }
+
   /*** header section - grid layout ***/
   #header {
     grid-template-columns: 1fr;
@@ -330,21 +365,189 @@ a {
     width: 3.5rem;
   }
 
+  .logo__container {
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+  }
+
+  .logo__container h3 {
+    font-size: 1.5rem;
+  }
+
+  .logo__container h6 {
+    font-size: 1rem;
+  }
+
   .logo {
-    max-width: 55%;
+    max-width: 12%;
   }
 
   /*** Nav Bar ***/
   .nav {
     margin: 1.5rem 0;
+    justify-content: center;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .nav__links li a:hover {
+    text-decoration: underline;
+  }
+
+  .drop__down:hover .drop__down-content {
+    display: none;
+  }
+
+  .nav__links ul {
+    position: absolute;
+    flex-direction: column;
+    background-color: #4775be;
+    width: 80%;
+    left: 10%;
+    box-shadow: 0 0.6rem 1.5rem rgba(150, 142, 142, 0.7);
+  }
+
+  .drop__down-content ul {
+    display: none;
+  }
+
+  .responsive__menu,
+  .active {
+    display: block;
   }
 
   /*** main section - grid layout ***/
   #main__container {
-    /* padding: 5rem 0; */
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 1fr;
-    gap: 4rem 3rem;
+    gap: 4rem 0;
+    grid-template-areas:
+      "news"
+      "site-shortcuts"
+      "features"
+      "aside";
+  }
+
+  /*** News Section ***/
+  .news__content {
+    padding-bottom: 5rem;
+  }
+
+  .news__content img {
+    max-width: 35%;
+    padding-right: 1rem;
+  }
+
+  .news__content a {
+    font-size: 1.5rem;
+  }
+
+  /*** Features Section ***/
+  .features-img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .features a {
+    font-size: 1.5rem;
+  }
+
+  /*** SideBar ***/
+  .aside__shortcuts {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media all and (max-width: 580px) {
+  body {
+    padding: 0 1.875rem;
+    font-size: 1.15rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  /*** header section - grid layout ***/
+  #header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "logo "
+      "nav"
+      "title__links";
+    text-align: center;
+    justify-items: center;
+  }
+
+  /*** Title bar ***/
+  .title__links-container li {
+    padding: 0 1.75rem;
+  }
+
+  .title__links-img {
+    width: 3.5rem;
+  }
+
+  /* .logo__container {
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+  }
+
+  .logo__container h3 {
+    margin-bottom: 0.2rem;
+  } */
+
+  .logo {
+    max-width: 10%;
+  }
+
+  /*** Nav Bar ***/
+  .nav {
+    margin: 1.5rem 0;
+    justify-content: center;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .nav__links li a:hover {
+    text-decoration: underline;
+  }
+
+  .drop__down:hover .drop__down-content {
+    display: none;
+  }
+
+  .nav__links ul {
+    position: absolute;
+    flex-direction: column;
+    background-color: #4775be;
+    width: 80%;
+    left: 10%;
+    box-shadow: 0 0.6rem 1.5rem rgba(150, 142, 142, 0.7);
+  }
+
+  .drop__down-content ul {
+    display: none;
+  }
+
+  .responsive__menu,
+  .active {
+    display: block;
+  }
+
+  /*** main section - grid layout ***/
+  #main__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    gap: 4rem 0;
     grid-template-areas:
       "news"
       "site-shortcuts"

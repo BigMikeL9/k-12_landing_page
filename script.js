@@ -1,4 +1,6 @@
 const body = document.querySelector("body");
+const responsiveMenu = document.querySelector(".responsive__menu");
+const navLinks = document.querySelector(".nav__links");
 const anchorTags = document.querySelectorAll("a");
 
 // load fade In animation
@@ -13,3 +15,7 @@ anchorTags.forEach((anchor) =>
     e.preventDefault();
   })
 );
+
+responsiveMenu.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
+});
