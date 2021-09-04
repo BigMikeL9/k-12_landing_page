@@ -429,7 +429,7 @@ h6 {
   #main__container {
     padding: 3rem 0;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 1fr;
+    grid-template-rows: 1fr;
     gap: 4rem 0;
     grid-template-areas:
       "news"
@@ -602,6 +602,14 @@ h6 {
   .logo {
     max-width: 20%;
     margin: 0 1rem 0 0;
+  }
+
+  .logo__container h3 {
+    font-size: 1.3rem;
+  }
+
+  .logo__container h6 {
+    font-size: 0.85rem;
   }
 
   /*** News Section ***/
