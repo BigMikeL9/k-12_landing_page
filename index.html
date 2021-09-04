@@ -23,53 +23,52 @@
   </head>
 
   <body>
-    <header>
-      <div class="title__container">
-        <img
-          src="img/logo.svg"
-          alt="Transition School District logo"
-          class="logo"
-        />
+    <header id="header">
+      <img
+        src="img/logo.svg"
+        alt="Transition School District logo"
+        class="logo"
+        id="logo"
+      />
 
-        <div>
-          <ul class="title__links-container">
-            <li>
-              <div class="title__link">
-                <img
-                  src="img/enrollement.svg"
-                  alt="enrollment link"
-                  class="title__links-img"
-                />
-                <a href="#">Enrollment</a>
-              </div>
-            </li>
+      <div id="title__links">
+        <ul class="title__links-container">
+          <li>
+            <div class="title__link">
+              <img
+                src="img/enrollement.svg"
+                alt="enrollment link"
+                class="title__links-img"
+              />
+              <a href="#">Enrollment</a>
+            </div>
+          </li>
 
-            <li>
-              <div class="title__link">
-                <img
-                  src="img/parents.svg"
-                  alt="parents link"
-                  class="title__links-img"
-                />
-                <a href="#">Parents</a>
-              </div>
-            </li>
+          <li>
+            <div class="title__link">
+              <img
+                src="img/parents.svg"
+                alt="parents link"
+                class="title__links-img"
+              />
+              <a href="#">Parents</a>
+            </div>
+          </li>
 
-            <li>
-              <div class="title__link">
-                <img
-                  src="img/bus_routes.svg"
-                  alt="bus routes link"
-                  class="title__links-img"
-                />
-                <a href="#">Bus Routes</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+          <li>
+            <div class="title__link">
+              <img
+                src="img/bus_routes.svg"
+                alt="bus routes link"
+                class="title__links-img"
+              />
+              <a href="#">Bus Routes</a>
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <nav class="nav">
+      <nav id="nav" class="nav">
         <ul class="nav__links">
           <li><a href="#">Home</a></li>
 
@@ -125,7 +124,7 @@
       </nav>
     </header>
 
-    <main class="main__container">
+    <main id="main__container">
       <section id="news">
         <h2>Latest News</h2>
         <div class="news__content">
@@ -215,12 +214,17 @@
           alt="headlines Image"
           class="features-img"
         />
-        <a href="#">Personalized Learning</a>
-        <p>
-          This is the teaser text that describes the headline story in more
-          detail and prompts the user to click the headline title.
-        </p>
+        <div>
+          <a href="#">Personalized Learning</a>
+          <p>
+            This is the teaser text that describes the headline story in more
+            detail and prompts the user to click the headline title.
+          </p>
+        </div>
       </section>
     </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>
