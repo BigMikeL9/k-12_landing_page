@@ -6,12 +6,12 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444;
+  font-weight: 600;
+  font-size: 1rem;
   line-height: 1.9;
+  color: #444;
   background-color: #fff;
   padding: 0 9.375rem;
-  font-size: 1rem;
-  font-weight: 600;
 
   /* fade in animation as the page loads*/
   opacity: 0;
@@ -19,8 +19,12 @@ body {
 }
 
 h2 {
-  padding-bottom: 1.625rem;
   font-size: 1.625rem;
+  padding-bottom: 1.625rem;
+}
+
+p {
+  font-size: 0.8rem;
 }
 
 li,
@@ -65,10 +69,12 @@ a {
 
 .logo__container h3 {
   margin-bottom: 0.2rem;
+  font-size: 1.2rem;
 }
 
 .logo__container h6 {
   display: inline-block;
+  font-size: 0.75rem;
 }
 
 .logo__container h3,
@@ -222,7 +228,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .news__content img {
@@ -252,7 +258,6 @@ h6 {
   font-weight: 400;
   border: 0;
   font-family: inherit;
-  /* width: 10%; */
   cursor: pointer;
 }
 
@@ -267,10 +272,10 @@ h6 {
 }
 
 .shortcuts-btn {
-  background-color: #4775be;
   border: none;
   border-radius: 0.15rem;
   color: #fff;
+  background-color: #4775be;
   padding: 1.3rem 2rem;
   margin-bottom: 0.75rem;
   text-align: left;
@@ -345,7 +350,7 @@ h6 {
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   /*** header section - grid layout ***/
@@ -358,7 +363,6 @@ h6 {
       "title__links";
     text-align: center;
     justify-items: center;
-    /* align-items: start; */
   }
 
   /*** Title bar ***/
@@ -474,13 +478,16 @@ h6 {
 /****** Mobile ******/
 @media all and (max-width: 480px) {
   body {
-    /* padding: 0 1.875rem; */
     font-size: 0.8rem;
   }
 
   h2 {
     padding-bottom: 1.2rem;
     font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.75rem;
   }
 
   /*** header section - grid layout ***/
@@ -534,7 +541,7 @@ h6 {
   }
 
   .news__content a {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   .small__btn {
@@ -551,12 +558,12 @@ h6 {
 
   /*** Features Section ***/
   .features-img {
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
   }
 
   .features a {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   /*** SideBar ***/
@@ -635,7 +642,7 @@ h6 {
   }
 }
 
-/****** large screens ******/
+/****** Desktop screens (large) ******/
 @media all and (min-width: 1875px) {
   body {
     font-size: 1.2rem;
@@ -643,6 +650,10 @@ h6 {
 
   h2 {
     font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
   }
 
   /*** Title Section ***/

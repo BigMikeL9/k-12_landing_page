@@ -1,24 +1,24 @@
 const body = document.querySelector("body");
 const responsiveMenu = document.querySelector(".responsive__menu");
 const navLinks = document.querySelector(".nav__links");
-const dropDown = document.querySelectorAll(".drop__down");
 const home = document.querySelector(".home");
+const dropDown = document.querySelectorAll(".drop__down");
 const anchorTags = document.querySelectorAll("a");
 
-// load fade In animation
+// Page load Fade-In animation
 const loadAnimation = function () {
   body.style.opacity = "100";
 };
 loadAnimation();
 
-// prevent anchor elements' default actions
+// prevent anchor elements' onclick default actions
 anchorTags.forEach((anchor) =>
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
   })
 );
 
-// nav bar current highlight
+// nav bar 'current' highlight
 dropDown.forEach((section) =>
   section.addEventListener("mouseenter", function () {
     home.classList.remove("current");
@@ -31,7 +31,7 @@ dropDown.forEach((section) =>
   })
 );
 
-// responsive menu
+// responsive menu (tablet/mobile)
 responsiveMenu.addEventListener("click", function () {
   navLinks.classList.toggle("active");
 });
